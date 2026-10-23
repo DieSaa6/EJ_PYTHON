@@ -1,0 +1,31 @@
+# Ejercicio con POV opuesto al propuesto en la versión de registro
+pacientes = {
+    12345678: {"nombre": "María José Fuentes Rojas", "edad": 34, "telefono": "+56 9 1111 2222",
+               "direccion": "Av. Los Pinos 123, Santiago", "ingreso": "02/10/2026", "salida": "07/10/2026"},
+    15987654: {"nombre": "Carlos Andrés Soto Vega", "edad": 52, "telefono": "+56 9 3333 4444",
+               "direccion": "Calle Las Rosas 456, Valparaíso", "ingreso": "10/10/2026", "salida": "15/10/2026"},
+    18456123: {"nombre": "Camila Antonia Pérez Díaz", "edad": 27, "telefono": "+56 9 5555 6666",
+               "direccion": "Pasaje Los Olivos 78, Concepción", "ingreso": "18/10/2026", "salida": "20/10/2026"},
+    9876543: {"nombre": "Luis Alberto Muñoz Castro", "edad": 68, "telefono": "+56 9 7777 8888",
+              "direccion": "Av. Central 910, Temuco", "ingreso": "20/10/2026", "salida": "23/10/2026"},
+}
+
+def buscar():
+    try:
+        run = int(input("RUN a buscar (sin puntos ni dígito verificador): "))
+    except ValueError:
+        print("El RUN debe ser un número")
+        return
+    if run in pacientes:
+        p = pacientes[run]
+        print("RUN:", run)
+        print("Nombre:", p["nombre"])
+        print("Edad:", p["edad"])
+        print("Teléfono:", p["telefono"])
+        print("Dirección:", p["direccion"])
+        print("Ingreso:", p["ingreso"])
+        print("Salida:", p["salida"])
+    else:
+        print("Paciente no encontrado")
+
+buscar()

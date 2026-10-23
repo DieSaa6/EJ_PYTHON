@@ -1,0 +1,24 @@
+pacientes = {}
+
+def registrar():
+    try:
+        run = int(input("RUN (sin puntos ni dígito verificador): "))
+        edad = int(input("Edad: "))
+    except ValueError:
+        print("RUN y edad deben ser números")
+        return
+    if run in pacientes:
+        print("Ese paciente ya está registrado")
+        return
+    pacientes[run] = {
+        "nombre": input("Nombre completo: "),
+        "edad": edad,
+        "telefono": input("Teléfono: "),
+        "direccion": input("Dirección: "),
+        "ingreso": input("Fecha de ingreso (dd/mm/aaaa): "),
+        "salida": input("Fecha de salida (dd/mm/aaaa): "),
+    }
+    print("Paciente registrado")
+
+registrar()
+print(pacientes)
